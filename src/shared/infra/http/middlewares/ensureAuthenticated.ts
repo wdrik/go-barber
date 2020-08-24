@@ -1,9 +1,9 @@
 import { Request, Response, NextFunction } from 'express';
 import { verify } from 'jsonwebtoken';
 
-import authConfig from '../../config/auth';
+import authConfig from '../../../../config/auth';
 
-import AppError from '../errors/AppError';
+import AppError from '../../../errors/AppError';
 
 interface TokenPayload {
   iat: number;
@@ -38,8 +38,3 @@ export default function ensureAuthenticated(
     throw new AppError('Invalid JWT token', 401);
   }
 }
-
-// Fazendo quem eu amo de motivo de superação, quando eu me deparar
-// Com dias difíceis que até dificulte pra previsão ficar melhor..
-// Mais nunca foi fácil, pode se acostumar!
-// Que eu to de pé como varios não desejava.. Jogo só acaba quando o juiz apitar
